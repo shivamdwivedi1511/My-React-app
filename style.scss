@@ -31,7 +31,7 @@
   min-height: 80vh;
   display: flex;
   flex-wrap: wrap;
-//   justify-content: center;
+  justify-content: center;
 //   padding: 0px 20px;
 }
 
@@ -84,9 +84,7 @@
     color: transparent;
     padding-top: 16px;
     text-transform: uppercase;
-    &:hover{
-        color: cornflowerblue;
-    }
+    
   }
   .food-type{
     color: #686b78;
@@ -102,5 +100,8 @@
   &:hover{
     border-color: #d3d5df;
     box-shadow: 0 4px 7px 0 rgba(218,220,230,.6);
+    .quick-view{
+        color: cornflowerblue;
+    }
   }
 }

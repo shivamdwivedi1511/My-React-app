@@ -11,7 +11,7 @@ const Card =({data})=>{
             <li>24 mins</li>
             <li>200 for two</li>
             </ul> */}
-        <div className="offer"> 20% off</div>
+        <div className="offer"> {data.aggregatedDiscountInfo?.header}</div>
         <div className="quick-view">Quick View</div>
     </div>)
 }
