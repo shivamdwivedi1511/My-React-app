@@ -1,5 +1,5 @@
+import { Link } from "react-router-dom";
 import { LOGO } from "../config";
-
 const Header = () => {
   return (
     <div className="header">
@@ -8,9 +8,9 @@ const Header = () => {
       </div>
       <ul className="menu">
         <li>search</li>
-        <li>offer</li>
-        <li>help</li>
-        <li>cart</li>
+        <li><Link to ='offer'>offer</Link></li>
+        <li><Link to ='help'>help</Link></li>
+        <li><Link to ='contact'>contact</Link></li>
       </ul>
     </div>
   );

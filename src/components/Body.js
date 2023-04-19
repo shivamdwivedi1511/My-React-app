@@ -1,20 +1,14 @@
-import { useEffect } from "react";
-import { DATA_LIST } from "../config";
+import { useEffect, useState } from "react";
 import Card from "./Card";
 
 const Body =()=>{
+    const [list, setList] =useState([]);
+    
     const getData =async()=>{
-        const options = {
-            method: 'GET',
-            headers: {
-                'X-RapidAPI-Key': 'KP3ctoGzvMmshGOLIYxNNmkegM4Ap1Vl22cjsnfiGfDP7immud',
-                'X-RapidAPI-Host': 'tasty.p.rapidapi.com'
-            }
-        };
-        
-        let res = await  fetch('https://tasty.p.rapidapi.com/recipes/list?from=0&size=20&tags=under_30_minutes', options)
-        // let data = await JSON.parse(res);
-        console.log('data>>>>', res);
+        let res = await  fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.4275236&lng=80.3353368&page_type=DESKTOP_WEB_LISTING')
+        let data = await res.json();
+        console.log('data>>>>', data.data.cards[2].data.data.cards);
+        setList(data.data.cards[2].data.data.cards)
     }
 
     useEffect(()=>{
@@ -22,7 +16,7 @@ const Body =()=>{
     },[])
     return (
         <div className="body">
-           {DATA_LIST.map(item=><Card data={item.data} />)}
+           {list.map(item=><Card data={item.data} />)}
         </div>
     )
         
